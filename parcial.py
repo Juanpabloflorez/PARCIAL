@@ -3,23 +3,28 @@ from libros import Libros
 
 def nain():
     print("Bienvenido a la Biblioteca Universitaria")
-    opc=input("Ingrese 1 para registrar usuario, ingrese 2 para registrar libros: ")
+    opc=int(input("Ingrese 1 para registrar usuario, ingrese 2 para registrar libros: "))
 
     if (opc==1):
-        name=input(print("Ingrese su nombre: "))
-        age=input(print("Ingrese su edad: "))
-        ident=input(print("Cree su ID: "))
+        name=input("Ingrese su nombre: ")
+        age=input("Ingrese su edad: ")
+        ident=input("Cree su ID: ")
 
         Usuarios(nombre=name, edad=age, id=ident).registrar_usuario
-        Usuarios().mostrarU()
+        print(f"Usuario creado exitosamente, Nombre: ",name,", Edad: ",age,", ID creada: ",ident)
 
     if (opc==2):
-        book=input(print("Ingrese el nombre del libro: "))
-        genrer=input(print("Ingrese el genero (1 para matematicas, 2 para ciencias y 3 para humanas): "))
+        book=input("Ingrese el nombre del libro: ")
+        genrer=int(input("Ingrese el genero (1 para matematicas, 2 para ciencias y 3 para humanas): "))
 
-        if (genrer != 1 or genrer != 2 or genrer != 3):
-            raise TypeError("Valor no valido")
+        if (genrer==1):
+            genrer="matematicas"
+        if (genrer==2):
+            genrer="ciencias"
+        if (genrer==3):
+            genrer="humanas"
+
         Libros(titulo=book, categoria=genrer).registrar_libro
-        Libros().mostrarL()
+        print(f"Libro agregado exitosamente, Titulo: ",book,", Genero: ",genrer)
 
 nain()
