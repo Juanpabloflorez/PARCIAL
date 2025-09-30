@@ -21,7 +21,6 @@ class Usuarios:
             self.nombre=nombre
             return nombre
         
-        @edad.setter
         def edad(self,valor):
             if not isinstance (valor,str):
                 raise TypeError("La edad debe ser numerica")
@@ -30,7 +29,6 @@ class Usuarios:
             self._edad=valor
             return edad
 
-        @id.setter
         def id(self,ide):
             if (len(nombre))<1:
                 raise TypeError("La ID no puede ser nada")
