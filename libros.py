@@ -8,15 +8,14 @@ class Libros:
         return self.titulo
 
     @titulo.setter
-    def titulo(self,texto):
-        if (len(texto))<1:
+    def titulo(self,titulo):
+        if (len(titulo))<1:
             raise TypeError("Ingrese un nombre valido")
-        self.titulo=texto
 
-    def categoria(self,category):
-        if category != 1 or category != 2 or category != 3:
+    def categoria(self,categoria):
+        if categoria != 1 or categoria != 2 or categoria != 3:
             raise TypeError("La categoria no existe")
-        self.categoria=category
+        self.categoria=categoria
 
     def registrar_libro(self):
         self.titulo()
