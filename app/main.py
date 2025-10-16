@@ -1,11 +1,14 @@
 from user import Usuarios
 from libros import Libros
+from firebase_servicio import FirebaseRealTimeService
+from lectura import leerLibros
 import firebase_admin
 from firebase_admin import db,credentials
 
 cred=credentials.Certificate("credentials.json")
 firebase_admin.initialize_app(cred, {"databaseURL": "https://trabajo-opcional-puntos-extra-default-rtdb.firebaseio.com/"})
 
+ref = FirebaseRealTimeService()
 ref = db.reference("/")
 
 def registrarUsuario():
@@ -39,6 +42,8 @@ def registrarLibro():
 
         print(f"Libro agregado exitosamente, Titulo: ",book,", Categoria: ",genero)
 
+def leer():
+     leerLibros()
 
 def main():
     registrarLibro()
