@@ -46,7 +46,7 @@ def leer():
      leerLibros()
 
 def main():
-    registrarLibro()
+    #Ingresar funcion
 
 if __name__ == "__main__":
     main()
