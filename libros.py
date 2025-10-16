@@ -23,4 +23,3 @@ class Libros:
 
     def mostrarL(self):
         return Libros(self)
-        
