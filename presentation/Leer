@@ -1,0 +1,9 @@
+def leerLibros():
+    libros = ref.get()
+    if libros:
+        for clave, datos in libros.items():
+            print(f"ID: {clave}")
+            for campo, valor in datos.items():
+                print(f"  {campo}: {valor}")
+    else:
+        print("No hay libros recopilados")
